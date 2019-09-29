@@ -27,8 +27,8 @@ decode_config=conf/decode.yaml
 recog_model=model.acc.best # set a model to be used for decoding: 'model.acc.best' or 'model.loss.best'
 
 # data
-timit=/home/shree/TIMIT
-trans_type=char
+timit=/home/angshuman/TIMIT
+trans_type=phn
 
 # exp tag
 tag="" # tag for managing experiments.
