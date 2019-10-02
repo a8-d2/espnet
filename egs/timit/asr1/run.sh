@@ -18,7 +18,7 @@ verbose=1      # verbose option
 resume=        # Resume the training from snapshot
 
 # feature configuration
-do_delta=false
+do_delta=true
 
 train_config=conf/train.yaml
 decode_config=conf/decode.yaml
