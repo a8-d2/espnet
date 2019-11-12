@@ -18,7 +18,7 @@ verbose=1      # verbose option
 resume=        # Resume the training from snapshot
 
 # feature configuration
-do_delta=false
+do_delta= true
 
 train_config=conf/train.yaml
 decode_config=conf/decode.yaml
@@ -28,7 +28,7 @@ recog_model=model.acc.best # set a model to be used for decoding: 'model.acc.bes
 
 # data
 timit=/home/shree/TIMIT
-trans_type=char
+trans_type=phn
 
 # exp tag
 tag="" # tag for managing experiments.
@@ -62,7 +62,7 @@ if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
     fbankdir=fbank
     # Generate the fbank features; by default 80-dimensional fbanks with pitch on each frame
     for x in test train dev; do
-        steps/make_spectrogram.sh --cmd "$train_cmd" --nj 8 --write_utt2num_frames true \
+        steps/make_fbank.sh --cmd "$train_cmd" --nj 8 --write_utt2num_frames true \
         data/${x} exp/make_fbank/${x} ${fbankdir}
     done
 
